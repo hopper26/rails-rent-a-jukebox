@@ -1,0 +1,5 @@
+<h1><%= @item.title %></h1>
+<%= image_tag "#{@item.image}" %>
+<p><%= @item.content %></p>
+<p><%= "£#{@item.price}" %></p>
+<button><%= link_to "Book Jukebox", items_path %> </button>

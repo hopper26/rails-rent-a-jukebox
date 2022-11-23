@@ -25,12 +25,12 @@ arr = ["https://imgs.search.brave.com/dcPmIe6DGG4dWAKiPy4J7k2HxlLgCnb3Pkq92VPTgD
 end
 
 5.times do
-  jukebox = Jukebox.new(
+  item = Item.new(
     title: Faker::Music.album,
     price: Random.rand(300),
     image: arr[rand(5)],
     content: Faker::JapaneseMedia::StudioGhibli.quote,
     user_id: 1
   )
-  jukebox.save
+  item.save
 end

@@ -1,0 +1,21 @@
+<h2>New Jukebox</h2>
+
+<%= simple_form_for(@item) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title,
+                input_html: { autocomplete: "title" }%>
+    <%= f.input :price,
+                input_html: { autocomplete: "price" }%>
+    <%= f.input :image,
+                input_html: { autocomplete: "image" } %>
+    <%= f.input :content,
+                input_html: { autocomplete: "content" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Add To List" %>
+  </div>
+<% end %>
+
+
+<%# <%= render "devise/shared/links" %>

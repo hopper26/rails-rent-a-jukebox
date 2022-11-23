@@ -1,6 +1,6 @@
 require "test_helper"
 
-class JukeboxTest < ActiveSupport::TestCase
+class ItemsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
