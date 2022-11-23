@@ -15,13 +15,15 @@ arr = ["https://imgs.search.brave.com/dcPmIe6DGG4dWAKiPy4J7k2HxlLgCnb3Pkq92VPTgD
 
 5.times do
   user = User.new(
-    first_name: "blah",
-    last_name: "blah",
+    first_name: Faker::JapaneseMedia::StudioGhibli.character,
+    last_name: Faker::JapaneseMedia::StudioGhibli.character,
     address: "space",
     email: "123@gmail.com",
     password: "password"
   )
   user.save
+  puts user.first_name
+  puts user.last_name
 end
 
 5.times do

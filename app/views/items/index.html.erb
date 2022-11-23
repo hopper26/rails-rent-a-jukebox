@@ -5,11 +5,7 @@
 
 <%= link_to "List New Jukebox", new_item_path %>
 <br>
-
-
-
 <br>
-
 <ul>
   <% @items.each do |item| %>
     <li><%= link_to item.title, item_path(item) %></li>
@@ -18,3 +14,8 @@
     <br>
   <% end %>
 </ul>
+
+
+    <%# <% @users.each do |user| %>
+      <%# <li><% item.user_id == user.id %>
+    <%# <% end %>
