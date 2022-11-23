@@ -1,0 +1,11 @@
+<h1>All The Jukeboxes</h1>
+<h2>Here you will find a list of jukeboxes available to rent</h2>
+<p>Click on each one for more detail</p>
+
+<ul>
+  <% @jukeboxes.each do |jukebox| %>
+    <li><%= link_to jukebox.title, jukebox_path(jukebox) %></li>
+    <li><%= image_tag "#{jukebox.image}" %></li>
+    <li><%= jukebox.price %>
+  <% end %>
+</ul>
