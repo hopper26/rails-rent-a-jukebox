@@ -54,6 +54,16 @@ gem "devise"
 # faker
 gem "faker"
 
+#flatpickr
+gem "flatpickr_rails"
+
+#date
+gem 'simple-form-datepicker', '~> 0.1.3'
+
+#cloudinary
+gem "cloudinary"
+
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

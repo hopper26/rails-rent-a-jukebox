@@ -6,18 +6,18 @@
 <%= link_to "List New Jukebox", new_item_path %>
 <br>
 <br>
-<ul>
-  <% @items.each do |item| %>
-    <li><%= link_to item.title, item_path(item) %></li>
-    <%= image_tag "#{item.image}" %>
-    <li><%= "£#{item.price}"  %><li>
-    <button><%= link_to "Edit Jukebox", edit_item_path(item) %></button>
-    <button><%= link_to "Delete", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-</li>
-    <br>
-    <br>
-  <% end %>
-</ul>
+
+<% @items.each do |item| %>
+  <li><%= link_to item.title, item_path(item) %></li>
+  <br>
+  <%= image_tag "#{item.image}" %>
+  <br>
+  <p><%= "£#{item.price}"  %><p>
+  <button><%= link_to "Edit Jukebox", edit_item_path(item) %></button>
+  <button><%= link_to "Delete Jukebox", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+  <br>
+  <br>
+<% end %>
 
 
     <%# <% @users.each do |user| %>
