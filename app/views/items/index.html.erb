@@ -1,21 +1,26 @@
-<h1>All The Jukeboxes</h1>
-<h2>Here you will find a list of jukeboxes available to rent</h2>
-<p>Click on each one for more detail</p>
-<br>
+<div class="container">
+  <div id="heading">
+    <h1>All The Jukeboxes</h1>
+    <h2>Here you will find a list of jukeboxes available to rent</h2>
+    <p>Click on each one for more detail</p>
+  </div>
+  <br>
 
-<%= link_to "List New Jukebox", new_item_path %>
-<br>
-<br>
+  <button><%= link_to "List New Jukebox", new_item_path %></button>
+  <br>
+  <br>
 
-<% @items.each do |item| %>
-  <li><%= link_to item.title, item_path(item) %></li>
-  <br>
-  <%= image_tag "#{item.image}" %>
-  <%# <%= cl_image_tag("ayzpsmjsjq336fgomu2a", width: 50, height: 50, crop: :fill) %>
-  <br>
-  <p><%= "£#{item.price}"  %><p>
-  <button><%= link_to "Edit Jukebox", edit_item_path(item) %></button>
-  <button><%= link_to "Delete Jukebox", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-  <br>
-  <br>
-<% end %>
+  <div class="cards">
+    <% @items.each do |item| %>
+      <div class="each_card">
+        <li><%= link_to item.title, item_path(item) %></li>
+        <br>
+        <p id="img"><%= image_tag "#{item.image}" %><p>
+        <%# <%= cl_image_tag("ayzpsmjsjq336fgomu2a", width: 50, height: 50, crop: :fill) %>
+        <p><%= "Price: £#{item.price}"  %><p>
+        <button><%= link_to "Edit Jukebox", edit_item_path(item) %></button>
+        <button><%= link_to "Delete Jukebox", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+      </div>
+    <% end %>
+  </div>
+</div>

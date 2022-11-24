@@ -1,18 +1,20 @@
-<h2>Edit Jukebox</h2>
+<div class="container">
+  <h2>Edit Jukebox</h2>
 
-<%= simple_form_for(@item) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title,
-                input_html: { autocomplete: "title" }%>
-    <%= f.input :price,
-                input_html: { autocomplete: "price" }%>
-    <%= f.input :image,
-                input_html: { autocomplete: "image" } %>
-    <%= f.input :content,
-                input_html: { autocomplete: "content" } %>
-  </div>
+  <%= simple_form_for(@item) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :title,
+                  input_html: { autocomplete: "title" }%>
+      <%= f.input :price,
+                  input_html: { autocomplete: "price" }%>
+      <%= f.input :image,
+                  input_html: { autocomplete: "image" } %>
+      <%= f.input :content,
+                  input_html: { autocomplete: "content" } %>
+    </div>
 
-  <div class="form-actions">
-    <button><%= f.button :submit, "Save Changes" %></button>
+    <div class="form-actions">
+      <button><%= f.button :submit, "Save Changes" %></button>
+    </div>
+  <% end %>
   </div>
-<% end %>

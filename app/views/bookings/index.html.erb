@@ -1,15 +1,18 @@
-<h1>All Bookings Made</h1>
-
-<% @bookings.each do |booking| %>
-  <p><%= "User: #{booking.user.first_name}" %></p>
-  <p><%= "Title: #{booking.item.title}" %></p>
-  <p><%= booking.accepted %></p>
-  <p><%= booking.comment %></p>
-  <p><%= "Booked from: #{booking.start_date.day}-#{booking.start_date.month}-#{booking.start_date.year}" %></p>
-  <p><%= "Booked till: #{booking.end_date.day}-#{booking.end_date.month}-#{booking.end_date.year}" %></p>
-  <button><%= link_to "Edit Booking", edit_booking_path(booking) %></button>
-  <button><%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-
-  <br>
-  <br>
-<% end %>
+<div class="container">
+  <h1>All Bookings Made</h1>
+  <div class="bookings">
+      <% @bookings.each do |booking| %>
+        <div class="each-book">
+          <p><%= "User: #{booking.user.first_name}" %></p>
+          <p><%= "Jukebox: #{booking.item.title}" %></p>
+          <p><%= booking.accepted %></p>
+          <p><%= booking.comment %></p>
+          <p><%= "Booked from: #{booking.start_date.day}-#{booking.start_date.month}-#{booking.start_date.year}" %></p>
+          <p><%= "Booked till: #{booking.end_date.day}-#{booking.end_date.month}-#{booking.end_date.year}" %></p>
+          <button><%= link_to "Edit Booking", edit_booking_path(booking) %></button>
+          <button><%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+          <br>
+        </div>
+      <% end %>
+    </div>
+</div>
