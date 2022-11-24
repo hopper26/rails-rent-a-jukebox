@@ -9,8 +9,11 @@
 <ul>
   <% @items.each do |item| %>
     <li><%= link_to item.title, item_path(item) %></li>
-    <li><%= image_tag "#{item.image}" %></li>
-    <li><%= "£#{item.price}"  %></li>
+    <%= image_tag "#{item.image}" %>
+    <li><%= "£#{item.price}"  %><li>
+    <button><%= link_to "Edit Jukebox", edit_item_path(item) %></button>
+    <button><%= link_to "Delete", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+</li>
     <br>
     <br>
   <% end %>

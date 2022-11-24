@@ -2,8 +2,8 @@
 
 <%= simple_form_for [@item, @booking] do |f| %>
   <div class="form-inputs">
-    <%= f.input :price,
-                input_html: { autocomplete: "price" }%>
+    <%= f.input :comment,
+                input_html: { autocomplete: "comment" }%>
     <%= f.input :start_date,
                 input_html: { autocomplete: "start_date" }%>
     <%= f.input :end_date,
