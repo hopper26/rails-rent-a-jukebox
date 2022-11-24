@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
 
-  def show
-    @item = Item.find(params[:id])
-    @user = User.select(:id, :first_name).find(@item.user_id)
-  end
-
   def index
     @items = Item.all
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    # @user = User.select(:id, :first_name).find(@item.user_id)
   end
 
   def new
@@ -22,6 +22,17 @@ class ItemsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to item_path(@item)
+  end
+
 
   private
 

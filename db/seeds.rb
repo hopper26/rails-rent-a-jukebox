@@ -18,12 +18,10 @@ arr = ["https://imgs.search.brave.com/dcPmIe6DGG4dWAKiPy4J7k2HxlLgCnb3Pkq92VPTgD
     first_name: Faker::JapaneseMedia::StudioGhibli.character,
     last_name: Faker::JapaneseMedia::StudioGhibli.character,
     address: "space",
-    email: "123@gmail.com",
+    email: "#{Faker::JapaneseMedia::StudioGhibli.character}@gmail.com",
     password: "password"
   )
   user.save
-  puts user.first_name
-  puts user.last_name
 end
 
 5.times do
@@ -32,7 +30,7 @@ end
     price: Random.rand(300),
     image: arr[rand(5)],
     content: Faker::JapaneseMedia::StudioGhibli.quote,
-    user_id: 1
+    user_id: Random.rand(5)
   )
   item.save
 end
