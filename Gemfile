@@ -55,7 +55,7 @@ gem "devise"
 gem "faker"
 
 #flatpickr
-gem "flatpickr_rails"
+#gem "flatpickr_rails"
 
 #date
 gem 'simple-form-datepicker', '~> 0.1.3'
