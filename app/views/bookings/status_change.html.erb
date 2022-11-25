@@ -4,10 +4,14 @@
     <% @bookings.each do |booking| %>
       <div class="each-book">
         <p><%= "Jukebox: #{booking.item.title}" %></p>
+        <p><%= "Current status: #{booking.status}" %></p>
 
         <%= simple_form_for (booking) do |f| %>
           <div class="form-inputs">
-            <%= f.select :status, ["accepted", "rejected"] %>
+            <%# <%= f.select :status, ["accepted", "rejected"], prompt: "pending" %>
+
+            <%= f.input :status, :collection => ["accepted", "rejected"],:input_html => { :class => 'form-control'}, :label => 'Status Change', prompt: "Choose From List" %>
+
           </div>
           <div class="form-actions">
             <button><%= f.button :submit, "Save" %></button>
