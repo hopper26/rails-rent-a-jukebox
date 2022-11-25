@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_rent_a_jukebox_production
-  username: rails_rent_a_jukebox
-  password: <%= ENV["RAILS_RENT_A_JUKEBOX_DATABASE_PASSWORD"] %>
+  database: jukebox_hopper26_production
+  username: jukebox_hopper26
+  password: <%= ENV["JUKEBOX_HOPPER26_DATABASE_PASSWORD"] %>
