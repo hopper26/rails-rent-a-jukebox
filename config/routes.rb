@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   get "mine", to: "bookings#mine"
+  get "status_change", to: "bookings#status_change"
 end

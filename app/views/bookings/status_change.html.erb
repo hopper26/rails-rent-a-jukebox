@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Bookings on My Items</h1>
+  <div class="bookings">
+    <% @bookings.each do |booking| %>
+      <div class="each-book">
+        <p><%= "Jukebox: #{booking.item.title}" %></p>
+
+        <%= simple_form_for (booking) do |f| %>
+          <div class="form-inputs">
+            <%= f.select :status, ["accepted", "rejected"] %>
+          </div>
+          <div class="form-actions">
+            <button><%= f.button :submit, "Save" %></button>
+          </div>
+        <% end %>
+
+
+
+
+
+        <%# <div class="dropdown"> %>
+          <%# <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Status</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Accepted</a>
+            <a class="dropdown-item" href="#">Rejected</a>
+          </div>
+        </div> %>
+        <%# <p><%= "Status: #{booking.status}" %>
+        <p><%= "Comments: #{booking.comment}" %></p>
+        <p><%= "Booked from: #{booking.start_date.day}-#{booking.start_date.month}-#{booking.start_date.year}" %></p>
+        <p><%= "Booked till: #{booking.end_date.day}-#{booking.end_date.month}-#{booking.end_date.year}" %></p>
+        <button><%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+        <br>
+      </div>
+    <% end %>
+  </div>
+</div>

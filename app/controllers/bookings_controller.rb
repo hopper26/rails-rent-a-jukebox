@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   def new
     @item = Item.find(params[:item_id])
     @booking = Booking.new
+    @booking.status = "pending"
   end
 
   def create
@@ -16,6 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @booking.item_id = @item.id
+    @booking.status = "pending"
     if @booking.save
       # redirect_to bookings_path
       redirect_to item_path(@item), notice: "Booking Was Made"
@@ -44,9 +46,13 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id).all
   end
 
+  def status_change
+    @bookings = Booking.where(user_id: current_user.id).all
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:comment, :start_date, :end_date)
+    params.require(:booking).permit(:comment, :start_date, :end_date, :status)
   end
 end
